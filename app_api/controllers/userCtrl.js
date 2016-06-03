@@ -5,7 +5,7 @@ const saltRounds = 13;
 module.exports.index = function(req,res){
 	models.User.findAll({
 		include : [{
-			model : models.Task
+			model : models.Tours
 		}]
 	})
 		.then(function(users){
@@ -21,7 +21,7 @@ module.exports.index = function(req,res){
 module.exports.show = function(req,res){
 	models.User.findById(req.params.id, {
 		include : [{
-			model : models.Task
+			model : models.Tours
 		}]
 	})
 		.then(function(user){

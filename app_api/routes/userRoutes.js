@@ -1,7 +1,7 @@
 // userRoutes.js
 
 var express = require('express');
-var router = require('./taskRoutes');
+var router = require('./toursRoutes');
 var userCtrl = require('../controllers/userCtrl');
 
 router.get('/', userCtrl.index);
