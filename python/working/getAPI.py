@@ -75,7 +75,7 @@ def getTour(tourId):
 # now.strftime('%Y-%m-%d'),now.strftime('%Y-%m-%d'
     # print "START COUNTRY " + tourDossier.
 
-    raw_input(">")
+    # raw_input(">")
     # description = description.replace('\'','')
     description = string.replace(description,"'",'"')
     # description.replace('\'','\\\'')
