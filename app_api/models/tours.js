@@ -15,8 +15,5 @@ module.exports = function(sequelize, DataTypes) {
     });
 
     return Tour;
-<<<<<<< HEAD
-}
-=======
+
 };
->>>>>>> c80c6803dd118b30e948830f239c5854b5331a73
