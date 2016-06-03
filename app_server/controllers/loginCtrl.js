@@ -15,7 +15,7 @@ module.exports.authenticate = function(req,res) {
 	console.log(req.body);
 	passportConfig.authenticate('local', function(err,user,info){
 		if (err || !user) {
-			return res.redirect('/login');
+			return res.render('login', {problem:'Please verify that user/password match is correct'});
 		}
 		req.login(user,function(err){
 			return res.redirect('/');
