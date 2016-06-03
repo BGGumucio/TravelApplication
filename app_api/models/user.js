@@ -18,13 +18,9 @@ module.exports = function(sequelize, DataTypes) {
         type_of_user: DataTypes.INTEGER
     }, {
         classMethods: {
-<<<<<<< HEAD
             associate : function(models) {
                 User.hasMany(models.Tours)
             }
-=======
-
->>>>>>> 5903dfb6e78d374fe5cabdc4522700c9d3a89d50
         }
     });
 
