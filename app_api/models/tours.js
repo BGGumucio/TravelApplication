@@ -1,10 +1,10 @@
 module.exports = function(sequelize, DataTypes) {
-    var Task = sequelize.define("Task", {
+    var Tour = sequelize.define("Tours", {
         title : DataTypes.STRING
     }, {
         classMethods: {
             associate : function(models) {
-                Task.belongsTo(models.User, {
+                Tour.belongsTo(models.User, {
                     onDelete : "CASCADE",
                     foreignKey : {
                         allowNull : false // must be associated
@@ -14,5 +14,5 @@ module.exports = function(sequelize, DataTypes) {
         }
     });
 
-    return Task;
+    return Tour;
 }
