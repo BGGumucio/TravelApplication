@@ -26,5 +26,13 @@
     "sequelize-cli": "^2.4.0"
   },
   "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amp89/TravelApp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/amp89/TravelApp/issues"
+  },
+  "homepage": "https://github.com/amp89/TravelApp#readme",
   "description": ""
 }
