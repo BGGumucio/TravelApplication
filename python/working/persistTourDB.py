@@ -3,7 +3,7 @@ import datetime
 import getAPI
 
 START_TOUR_ID = 23000;
-NUMBER_OF_TOURS = 20;
+NUMBER_OF_TOURS = 10;
 
 
 def persistTours(startId,numberOfTours):
@@ -21,7 +21,7 @@ def persistTours(startId,numberOfTours):
                 #
                 tourItems = getAPI.getTour(tourId)
 
-                statement = 'INSERT INTO `adventuredb`.`tours` (`start_location`, `end_location`, `start_date`, `end_date`, `cost`, `tour_description`, `num_avail`, `tour_name`, `continent`, `tour_image`, `map_image`) VALUES (\''+tourItems[0]+'\', \''+tourItems[1]+'\', \''+tourItems[2]+'\', \''+tourItems[3]+'\', \''+str(tourItems[4])+'\', \''+tourItems[5]+'\' , \''+str(tourItems[6])+'\' , \''+tourItems[7]+'\' , \''+tourItems[8]+'\' , \''+tourItems[9]+'\' , \''+tourItems[10]+'\' );'
+                statement = 'INSERT INTO `adventuredb`.`tours` (`id`,`start_location`, `end_location`, `start_date`, `end_date`, `cost`, `tour_description`, `num_avail`, `tour_name`, `continent`, `tour_image`, `map_image`) VALUES (\''+str(tourItems[0])+'\',\''+tourItems[1]+'\', \''+tourItems[2]+'\', \''+tourItems[3]+'\', \''+tourItems[4]+'\', \''+str(tourItems[5])+'\', \''+tourItems[6]+'\' , \''+str(tourItems[7])+'\' , \''+tourItems[8]+'\' , \''+tourItems[9]+'\' , \''+tourItems[10]+'\' , \''+tourItems[11]+'\' );'
 
                 print statement
 
@@ -41,4 +41,4 @@ def persistTours(startId,numberOfTours):
         conn.close()
 
 
-persistTours(23000,10)
+persistTours(START_TOUR_ID,NUMBER_OF_TOURS)

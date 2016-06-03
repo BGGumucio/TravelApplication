@@ -8,37 +8,46 @@ APIKEY = 'live_ba297406f66b04879ccb159952ab1ee3d3726002'
 gapi = Client(application_key=APIKEY)
 
 ###add this to database as TourId
-tourId  = 24309
+tourId  = 23000
+print gapi.tour_dossiers.get(tourId).to_json()
+raw_input(">")
 iteneraryId =  gapi.tour_dossiers.get(tourId).structured_itineraries[0].id
 
 print "=-=-=-=-=-=-=-=-=-=-=-Itenerary information =-=-=-=-=-=-=-=-=-=-=-=-="
 print gapi.itineraries.get(iteneraryId).to_json()
 
 print "=-=-=-=-=-=-=-=-=-=-=-Itenerary information =-=-=-=-=-=-=-=-=-=-=-=-="
+######start itenerary id
 daysArray =  gapi.itineraries.get(iteneraryId).days
-# days = [#, description]
 for d in daysArray:
     #AKA FOR EACH ITIN ITEM
     print "=-=-=-=newday=-=-=-="
-    print d.day
+    day = d.day
     #rec day to database as DAY
     for component in d.components:
         #USE THE LONGEST DESCRIPTION
         summaryUnicode =  component.summary
         longest = 0
-        stringToUse = ""
+        descriptionToUse = ""
         try:
             summaryString = summaryUnicode.decode("utf-8")
             # print len(unicode_string)
             if len(summaryString) > longest:
                 longest = len(summaryString)
-                stringToUse = summaryString
-                ###rec stringToUse to database, as iten. desc
+                descriptionToUse = summaryString
+                ###rec descriptionToUse to database, as iten. desc
             print summaryString
         except UnicodeEncodeError:
                 print "python made a mistake"
+######start itenerary id
 
 
+
+
+
+
+
+###below useless for final product
 
 print "dayNumber"
 # print dayNumberOneTest
