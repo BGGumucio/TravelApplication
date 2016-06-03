@@ -46,7 +46,7 @@ app.use(express.static(__dirname + '/public'));
 
 
 //add this {force: true}
-models.sequelize.sync()
+models.sequelize.sync({force: true})
 	.then(function(){
 		console.log('successfully synced db');
 		app.listen(port, function(){
