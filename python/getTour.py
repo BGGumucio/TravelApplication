@@ -58,6 +58,11 @@ print startDate
 print "END DATE: "
 print endDate
 
+images = tourDossier.images
+print images[0].values()[0]
+print images[1].values()[0]
+print images[2].values()[0]
+
 
 
 # print "START COUNTRY " + tourDossier.
