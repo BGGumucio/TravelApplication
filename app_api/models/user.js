@@ -19,10 +19,10 @@ module.exports = function(sequelize, DataTypes) {
     }, {
         classMethods: {
             associate : function(models) {
+
                 User.hasMany(models.Tours, {
                 onDelete : "CASCADE"
-                })
-                User.hasMany(models.Tours);
+              });
             }
         }
     });
