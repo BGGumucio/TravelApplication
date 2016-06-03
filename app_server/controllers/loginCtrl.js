@@ -30,7 +30,7 @@ module.exports.signup = function(req,res) {
 module.exports.register = function(req,res) {
 	bcrypt.hash(req.body.password, saltRounds, function(err,hash){
 		models.User.create({
-			email : req.body.email,
+			username : req.body.username,
 			password : hash,
 			first_name: req.body.first_name,
 			last_name: req.body.last_name,
