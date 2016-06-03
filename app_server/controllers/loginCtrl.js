@@ -30,14 +30,26 @@ module.exports.signup = function(req,res) {
 module.exports.register = function(req,res) {
 	bcrypt.hash(req.body.password, saltRounds, function(err,hash){
 		models.User.create({
-			username : req.body.username,
-			password : hash
+			email : req.body.email,
+			password : hash,
+			first_name: req.body.first_name,
+			last_name: req.body.last_name,
+			address: req.body.address,
+			city: req.body.city,
+			state: req.body.state,
+			zipcode: req.body.zipcode,
+			type_of_user: req.body.type_of_user
 		})
 			.then(function(user){
 				req.login(user,function(err){
 					return res.redirect('/');
 				})
-			});
+			})
+			.catch(function(err){
+				res.status(500);
+				res.send('This is an error'+ err);
+
+			})
 	});
 };
 

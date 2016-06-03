@@ -43,6 +43,8 @@ app.use('/users', require('./app_api/routes/userRoutes'));
 app.use(express.static(__dirname + '/public'));
 
 
+
+//add this {force: true}
 models.sequelize.sync()
 	.then(function(){
 		console.log('successfully synced db');
