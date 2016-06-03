@@ -55,5 +55,5 @@ module.exports.register = function(req,res) {
 
 module.exports.logout = function(req,res) {
 	req.logout();
-	res.redirect('/login');
+	res.redirect('/');
 }
