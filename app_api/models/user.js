@@ -19,13 +19,8 @@ module.exports = function(sequelize, DataTypes) {
     }, {
         classMethods: {
             associate : function(models) {
-<<<<<<< HEAD
-                User.hasMany(models.Tours, {
-                onDelete : "CASCADE"
-                })
-=======
+              
                 User.hasMany(models.Tours);
->>>>>>> c80c6803dd118b30e948830f239c5854b5331a73
             }
         }
     });
