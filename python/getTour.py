@@ -3,7 +3,7 @@
 
 from gapipy import Client
 
-tourId = 23001
+tourId = 24309
 
 APIKEY = 'live_ba297406f66b04879ccb159952ab1ee3d3726002'
 
@@ -42,6 +42,26 @@ print "END LOCATION : " + endCity + ", " + endCountry
 region = geo.values()[2].values()[0]
 print "REGION (continent): " + region
 
+
+price = 0
+
+tripDataSet = tourDossier.advertised_departures
+for data in tripDataSet:
+    if data.currency == 'USD':
+        print data.currency
+        print data.amount
+
+startDate = tourDossier.departures_start_date
+endDate = tourDossier.departures_end_date
+print "START DATE: "
+print startDate
+print "END DATE: "
+print endDate
+
+images = tourDossier.images
+print images[0].values()[0]
+print images[1].values()[0]
+print images[2].values()[0]
 
 
 
