@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "root",
-    "database": "sqlize",
+    "database": "AdventureDB",
     "host": "localhost",
     "dialect": "mysql"
   },
