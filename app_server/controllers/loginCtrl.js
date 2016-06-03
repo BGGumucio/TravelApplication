@@ -44,7 +44,12 @@ module.exports.register = function(req,res) {
 				req.login(user,function(err){
 					return res.redirect('/');
 				})
-			});
+			})
+			.catch(function(err){
+				res.status(500);
+				res.send('This is an error'+ err);
+
+			})
 	});
 };
 
