@@ -38,8 +38,13 @@ endCity = geo.values()[6].values()[0]
 ###push to end location in db
 print "END LOCATION : " + endCity + ", " + endCountry
 
+##region
+region = geo.values()[2].values()[0]
+print "REGION (continent): " + region
+
+
+
 
 # print "START COUNTRY " + tourDossier.
-
 
 raw_input(">")
