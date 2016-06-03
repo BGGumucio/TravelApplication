@@ -1,0 +1,1 @@
+INSERT INTO `adventuredb`.`tours` (`start_location`, `end_location`, `start_date`, `end_date`, `cost`, `tour_description`, `num_avail`, `tour_name`, `continent`, `tour_image`, `map_image`) VALUES ('start loc py test', 'end loc py test', '2009-05-05', '2009-05-05', 666.66, 'tour py dessdfsdc' , 50 , 'name', 'cont' , 'tour im link' , 'map im' );
