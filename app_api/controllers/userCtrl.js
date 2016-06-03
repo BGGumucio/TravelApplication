@@ -34,7 +34,7 @@ module.exports.create = function(req,res) {
     var rawPassword = user.password;
 
     bcrypt.hash(rawPassword, saltRounds, function(err,hash){
-        models.User.create({
+        models.user.create({
             email : user.email,
             password : hash,
 						first_name: user.first_name,
