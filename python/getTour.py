@@ -5,6 +5,15 @@ from gapipy import Client
 
 tourId = 24309
 
+#x is start
+#y is range
+function getTourByRange(x,y){
+
+
+
+}
+
+
 APIKEY = 'live_ba297406f66b04879ccb159952ab1ee3d3726002'
 
 gapi = Client(application_key=APIKEY)

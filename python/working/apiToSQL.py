@@ -1,5 +1,6 @@
 import mysql.connector
 import datetime
+import getAPI
 
 # def queryTest():
 #     query = "SELECT * FROM TOURS"
@@ -12,11 +13,12 @@ try:
 
         now = datetime.datetime(2017, 5, 5)
         #
-        tourItems = ['whyyy','enddsfdsfasdf loc py test',now.strftime('%Y-%m-%d'),now.strftime('%Y-%m-%d'),666.66,'tour py dessdfsdc',50,'name','cont','tour im link','map im']
+        tourItems = getAPI.getTour(23000)
 
         statement = 'INSERT INTO `adventuredb`.`tours` (`start_location`, `end_location`, `start_date`, `end_date`, `cost`, `tour_description`, `num_avail`, `tour_name`, `continent`, `tour_image`, `map_image`) VALUES (\''+tourItems[0]+'\', \''+tourItems[1]+'\', \''+tourItems[2]+'\', \''+tourItems[3]+'\', \''+str(tourItems[4])+'\', \''+tourItems[5]+'\' , \''+str(tourItems[6])+'\' , \''+tourItems[7]+'\' , \''+tourItems[8]+'\' , \''+tourItems[9]+'\' , \''+tourItems[9]+'\' );'
-        print statement;
-        #
+        print statement
+
+
         cursor = conn.cursor()
         #
         cursor.execute(statement)
