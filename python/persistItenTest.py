@@ -48,7 +48,8 @@ def pupulateIteneraryItems():
                             summaryString += summaryUnicode.decode("utf-8")
                             # print len(unicode_string)
                         except UnicodeEncodeError:
-                                print "python made a mistake"
+                            print "python made a mistake"
+                            summaryString = summaryUnicode
 
                         ####
 
