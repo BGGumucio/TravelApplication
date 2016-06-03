@@ -34,9 +34,16 @@ module.exports.create = function(req,res) {
     var rawPassword = user.password;
 
     bcrypt.hash(rawPassword, saltRounds, function(err,hash){
-        models.User.create({
-            username : user.username,
-            password : hash
+        models.user.create({
+            email : user.email,
+            password : hash,
+						first_name: user.first_name,
+						last_name: user.last_name,
+						address: user.address,
+						city: user.city,
+						state: user.state,
+						zipcode: user.zipcode,
+						type_of_user: user.type_of_user
         })
             .then(function(user) {
                 res.sendStatus(201);
@@ -47,15 +54,6 @@ module.exports.create = function(req,res) {
             });
 
     });
-    // var user = req.body;
-    // models.User.create(user)
-    //     .then(function(users){
-    //         res.sendStatus(201);
-    //     })
-    //     .catch(function(err){
-    //     	res.status(500);
-    //     	res.send(err);
-    //     });
 };
 
 module.exports.destroy = function(req,res){
