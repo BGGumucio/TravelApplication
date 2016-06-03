@@ -1,6 +1,7 @@
 import mysql.connector
 import datetime
 import getAPI
+import string
 from gapipy import Client
 
 APIKEY = 'live_ba297406f66b04879ccb159952ab1ee3d3726002'
@@ -52,13 +53,20 @@ def pupulateIteneraryItems():
                             summaryString = summaryUnicode
 
                         ####
-
+                    summaryString = string.replace(summaryString,"'",'"')
                     singleDayItenerary = [tourId[0],dayNumber,summaryString]
                     ####
             ######start itenerary id
                     dailyIteneraryItems.append(singleDayItenerary);
 
-
+                    # for item in singleDayItenerary:
+                        # print 'wow' + str(item)
+                    ###at this indent, execute a statement that pushes the daly itenerary to the db
+                    itenerarySubmitQuery = 'INSERT INTO itinerary (`day`,`description`,`tour_id`) VALUES (  \'' + str(singleDayItenerary[1]) + '\',\'' + singleDayItenerary[2] + '\',\'' + str(singleDayItenerary[0]) + '\');'
+                    print 'sql'
+                    print itenerarySubmitQuery
+                    print'\n'
+                    cursor.execute(itenerarySubmitQuery)
 
             conn.commit()
 
