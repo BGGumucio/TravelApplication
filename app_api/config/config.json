@@ -2,11 +2,7 @@
   "development": {
     "username": "root",
     "password": "root",
-<<<<<<< HEAD
-    "database": "Adventuredb",
-=======
     "database": "AdventureDB",
->>>>>>> 93ed117e50e1af2ed0ba26b32ee585875e2a76b8
     "host": "localhost",
     "dialect": "mysql"
   },
