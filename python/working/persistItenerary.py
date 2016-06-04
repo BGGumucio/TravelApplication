@@ -27,14 +27,15 @@ def pupulateIteneraryItems():
 
             for tourId in tourIdList:
                 # print tourId
-                # print tourId[0]
+                print tourId[0]
 
                 ######start itenerary id
-                iteneraryId =  gapi.tour_dossiers.get(23000).structured_itineraries[0].id
+                iteneraryId =  gapi.tour_dossiers.get(tourId[0]).structured_itineraries[0].id
                 daysArray =  gapi.itineraries.get(iteneraryId).days
-                singleDayItenerary = []
+
                 for dayObject in daysArray:
                     #AKA FOR EACH ITIN ITEM
+                    singleDayItenerary = []
                     # print "=-=-=-=newday=-=-=-="
                     dayNumber = dayObject.day
                     #rec day to database as DAY
@@ -56,16 +57,17 @@ def pupulateIteneraryItems():
                     summaryString = string.replace(summaryString,"'",'"')
                     singleDayItenerary = [tourId[0],dayNumber,summaryString]
                     ####
-            ######start itenerary id
+            ####|each day object
+            ##start itenerary id
                     dailyIteneraryItems.append(singleDayItenerary);
 
                     # for item in singleDayItenerary:
                         # print 'wow' + str(item)
                     ###at this indent, execute a statement that pushes the daly itenerary to the db
                     itenerarySubmitQuery = 'INSERT INTO itinerary (`day`,`description`,`tour_id`) VALUES (  \'' + str(singleDayItenerary[1]) + '\',\'' + singleDayItenerary[2] + '\',\'' + str(singleDayItenerary[0]) + '\');'
-                    print 'sql'
-                    print itenerarySubmitQuery
-                    print'\n'
+                    # print 'sql'
+                    # print itenerarySubmitQuery
+                    # print'\n'
                     cursor.execute(itenerarySubmitQuery)
 
             conn.commit()

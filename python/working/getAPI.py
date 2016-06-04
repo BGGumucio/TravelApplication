@@ -17,76 +17,82 @@ gapi = Client(application_key=APIKEY)
 def getTourByRange(tourId,numberOfTours):
     for t in range(0,numberOfTours):
         tourItems = getTour(tourId + t)
-        print tourItems
+        # print tourItems
 
 def getTour(tourId):
-    iteneraryId =  gapi.tour_dossiers.get(tourId).structured_itineraries[0].id
+    try:
 
-    tourDossier = gapi.tour_dossiers.get(tourId)
-    print "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
-    name =  tourDossier.name
-    description = tourDossier.description
+        print 'getting tour id: ' + str(tourId)
+        iteneraryId =  gapi.tour_dossiers.get(tourId).structured_itineraries[0].id
 
-    #geography is of dictionary type
-    geo = tourDossier.geography
-    # print "START CITY: "
-    startCity =  geo.values()[0].values()[0]
+        tourDossier = gapi.tour_dossiers.get(tourId)
+        # print "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
+        name =  tourDossier.name
+        description = tourDossier.description
 
-    # print "START COUNTRY: "
-    startCountry = geo.values()[1].values()[2]
+        #geography is of dictionary type
+        geo = tourDossier.geography
+        # print "START CITY: "
+        startCity =  geo.values()[0].values()[0]
 
-    ####push to start location in db
-    startLocation =  startCity + ", " + startCountry
+        # print "START COUNTRY: "
+        startCountry = geo.values()[1].values()[2]
 
-    #end country works
-    endCountry = geo.values()[4].values()[2]
-    #error
-    endCity = geo.values()[6].values()[0]
+        ####push to start location in db
+        startLocation =  startCity + ", " + startCountry
 
-
-    ###push to end location in db
-    endLocation = endCity + ", " + endCountry
-
-    ##region
-    region = geo.values()[2].values()[0]
-    print "REGION (continent): " + region
+        #end country works
+        endCountry = geo.values()[4].values()[2]
+        #error
+        endCity = geo.values()[6].values()[0]
 
 
-    price = 0
+        ###push to end location in db
+        endLocation = endCity + ", " + endCountry
 
-    tripDataSet = tourDossier.advertised_departures
-    for data in tripDataSet:
-        if data.currency == 'USD':
-            print data.currency
-            price = data.amount
-
-    startDate = tourDossier.departures_start_date
-    endDate = tourDossier.departures_end_date
-    print "START DATE: "
-    print startDate
-    print "END DATE: "
-    print endDate
-
-    images = tourDossier.images
-    mapImageLink = images[0].values()[0]
-    tourImageLink = images[1].values()[0]
-    print images[2].values()[0]
-
-# now.strftime('%Y-%m-%d'),now.strftime('%Y-%m-%d'
-    # print "START COUNTRY " + tourDossier.
-
-    # raw_input(">")
-    # description = description.replace('\'','')
-    description = string.replace(description,"'",'"')
-    # description.replace('\'','\\\'')
-
-    tourItemsUnicode = [tourId,startLocation,endLocation,startDate.strftime('%Y-%m-%d'),endDate.strftime('%Y-%m-%d'),price,description,50,name,region,tourImageLink,mapImageLink]
+        ##region
+        region = geo.values()[2].values()[0]
+        # print "REGION (continent): " + region
 
 
-    print 'returning'
+        price = 0
 
-    # description contains sql keywords
-    return tourItemsUnicode
+        tripDataSet = tourDossier.advertised_departures
+        for data in tripDataSet:
+            if data.currency == 'USD':
+                # print data.currency
+                price = data.amount
+
+        startDate = tourDossier.departures_start_date
+        endDate = tourDossier.departures_end_date
+        # print "START DATE: "
+        # print startDate
+        # print "END DATE: "
+        # print endDate
+
+        images = tourDossier.images
+        mapImageLink = images[0].values()[0]
+        tourImageLink = images[1].values()[0]
+        # print images[2].values()[0]
+
+    # now.strftime('%Y-%m-%d'),now.strftime('%Y-%m-%d'
+        # print "START COUNTRY " + tourDossier.
+
+        # raw_input(">")
+        # description = description.replace('\'','')
+        description = string.replace(description,"'",'"')
+        # description.replace('\'','\\\'')
+
+        tourItemsUnicode = [tourId,startLocation,endLocation,startDate.strftime('%Y-%m-%d'),endDate.strftime('%Y-%m-%d'),price,description,50,name,region,tourImageLink,mapImageLink]
+
+
+        # print 'returning'
+
+        # description contains sql keywords
+        return tourItemsUnicode
+    except Exception as e:
+        print e 
+
 
 
 
