@@ -3,12 +3,28 @@ var models = require('../../app_api/models');
 var bcrypt = require('bcryptjs');
 const saltRounds = 13;
 
+// //Cookie stuff
+// var cookieParser = require('cookie-parser');
+// var credentials = require('../../credentials');
+// app.use(cookieParser(credentials.cookieSecret));
+
 module.exports.home = function(req,res) {
 	res.render('index', {user : req.user});
 };
 
+//TODO delete check cookies
+module.exports.checkCookies = function(req,res){
+	console.log(req.signedCookies);
+
+  res.send(req.signedCookies);
+};
+
 module.exports.login = function(req,res) {
-	res.render('login')
+	// res.render('login');
+	//return cookie with username
+	res.render('login');
+	// username = 'username should be here';
+	// res.cookie('loggedInUser',{username:user},{signed:true});
 };
 
 module.exports.authenticate = function(req,res) {
