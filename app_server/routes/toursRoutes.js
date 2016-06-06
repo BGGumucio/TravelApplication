@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
-var viewAllCtrl = require('../controllers/viewAll');
+var viewCtrl = require('../controllers/viewCtrl');
 
-router.get('/getAllTours', viewAllCtrl.getAll);
+router.get('/AllTours', viewCtrl.getAll);
+router.get('/:id', viewCtrl.getOne);
 
 module.exports = router;

@@ -1,34 +1,16 @@
-<!-- <div class="text-center">
-
-    <h1>All Tours</h1>
-</div> -->
-
-<!-- <table class="table"> -->
-<!-- <div="row"> -->
-
-<!-- <div class="row"> -->
-
 <div class="container-fluid">
-
     <div class="text-center">
-
         <h1><u>All Tours</u></h1>
     </div>
-
     <div class="row">
-
+        {{#each Tours}} ​
+            <div class="col-md-6 text-center">
+                <a href="">
+                    <h4 class="">{{this.tour_name}}</h4>
+                    <img src="{{this.map_image}}" width="380" class="img-thumbnail text-center">
+                </a>
+            </div>
+        {{/each}}
     </div>
-    {{#each Tours}} ​
-
-        <div class="col-md-6 text-center">
-            <a href="">
-                <h4 class="">{{this.tour_name}}</h4>
-                <img src="{{this.map_image}}" width="380" class="img-thumbnail text-center">
-            </a>
-        </div>
-    {{/each}}
-
-</div>
-
 </div>
 <!-- </div> -->
