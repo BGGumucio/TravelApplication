@@ -9,23 +9,37 @@ const saltRounds = 13;
 // app.use(cookieParser(credentials.cookieSecret));
 
 module.exports.home = function(req,res) {
+	//test so page will work TODO fix this:
+		user = {
+			first_name:"first test",
+			last_name:"last test",
+			email:"email"
+		}
+
 	res.render('index', {user : req.user});
 };
 
 //TODO delete check cookies
 module.exports.checkCookies = function(req,res){
+
 	console.log(req.signedCookies);
 
   res.send(req.signedCookies);
+	
 };
 
+//go to login page
 module.exports.login = function(req,res) {
 	// res.render('login');
 	//return cookie with username
+
+
 	res.render('login');
 	// username = 'username should be here';
 	// res.cookie('loggedInUser',{username:user},{signed:true});
 };
+
+
 
 module.exports.authenticate = function(req,res) {
 	console.log(req.body);
@@ -34,7 +48,11 @@ module.exports.authenticate = function(req,res) {
 			return res.render('login', {problem:'Please verify that user/password match is correct'});
 		}
 		req.login(user,function(err){
+
+			res.cookie('currentUser',{user:user},{signed:true});
 			return res.redirect('/');
+			 
+
 		})
 	})(req,res);
 };
