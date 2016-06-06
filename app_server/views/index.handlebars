@@ -1,19 +1,28 @@
-<h1>Index</h1>
+<!-- <h1>Index</h1> -->
 
-{{#if user}}
-<h3>Name: {{user.first_name}} {{user.last_name}}</h3>
-<h3>Email: {{user.username}}</h3>
+<!-- {{#if user}}
+<h3>Welcome {{user.first_name}} {{user.last_name}}</h3>
+<h3>{{user.username}}</h3>
 {{else}}
 <h3>Welcome, Guest</h3>
 
-{{/if}}
+{{/if}} -->
 
 
-<div class="container">
+<!-- <div class="container"> -->
 
-<div class="jumbotron">
-  <img src="/images/home1.jpg" alt="" width="1000"/>
+<div class="imageAndText">
+  <img src="/images/home1.jpg" class="align-center img-responsive" alt="" width="1600"/>
+  <div class="col">
+    <div class="col-sm-4">
+      {{#if user}}
+      <h4>Welcome {{user.first_name}} {{user.last_name}} {{user.username}}</h4>
+      <!-- <h3>{{user.username}}</h3> -->
+      {{else}}
+      <h4>Welcome, Guest</h4>
+      {{/if}}
+    </div>
+  </div>
 </div>
 
 
-</div>
