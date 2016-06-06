@@ -8,21 +8,13 @@ const saltRounds = 13;
 // var credentials = require('../../credentials');
 // app.use(cookieParser(credentials.cookieSecret));
 
-module.exports.test = function(req,res) {
+module.exports.search = function(req,res) {
 	//test so page will work TODO fix this:
-		console.log('wtf');
+		user = {
+			first_name:"first test",
+			last_name:"last test",
+			email:"email"
+		}
 
-	res.send('index');
-
-
-
-};
-
-
-
-module.exports.addToCart = function(req,res) {
-	//TODO add stuff for a real tour item
-		console.log('sdflkjfjlk;sasdfakjkjl;fd');
-    res.cookie('testcookie',{tour:"tour test thing"},{signed:true});
-	res.send('index');
+	res.render('index', {user : req.user});
 };
