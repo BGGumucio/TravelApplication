@@ -17,9 +17,10 @@ module.exports = function(sequelize, DataTypes) {
         zipcode: DataTypes.INTEGER,
         type_of_user: DataTypes.INTEGER
     }, {
+       	timestamps: false,
         classMethods: {
             associate : function(models) {
-                User.hasMany(models.Tours);
+                User.hasMany(models.Booking);
             }
         }
     });

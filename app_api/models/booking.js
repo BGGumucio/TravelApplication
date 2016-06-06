@@ -19,6 +19,7 @@ module.exports = function(sequelize, DataTypes) {
         },
 
     }, {
+    	timestamps: false,
         classMethods: {
           //write the logic for the join table
         }

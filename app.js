@@ -38,8 +38,12 @@ app.use(passportConfig.session());
 
 var models = require('./app_api/models');
 
+
 app.use('/', require('./app_server/routes/loginRoutes'));
 app.use('/users', require('./app_api/routes/userRoutes'));
+app.use('/tours', require('./app_api/routes/toursRoutes'));
+app.use('/bookings', require('./app_api/routes/bookingRoutes'));
+
 //{force: true} add after adding model
 app.use(express.static(__dirname + '/public'));
 
