@@ -9,6 +9,13 @@ const saltRounds = 13;
 // app.use(cookieParser(credentials.cookieSecret));
 
 module.exports.home = function(req,res) {
+	//test so page will work TODO fix this:
+		user = {
+			first_name:"first test",
+			last_name:"last test",
+			email:"email"
+		}
+
 	res.render('index', {user : req.user});
 };
 
@@ -19,6 +26,7 @@ module.exports.checkCookies = function(req,res){
   res.send(req.signedCookies);
 };
 
+//go to login page
 module.exports.login = function(req,res) {
 	// res.render('login');
 	//return cookie with username
@@ -26,6 +34,14 @@ module.exports.login = function(req,res) {
 	// username = 'username should be here';
 	// res.cookie('loggedInUser',{username:user},{signed:true});
 };
+
+//login
+module.exports.loginUser = function(req,res){
+	res.render('index');
+	userNameTest = "wowwoowowowowowow"
+	res.cookie('user',{username:userNameTest},{signed:true});
+
+}
 
 module.exports.authenticate = function(req,res) {
 	console.log(req.body);
