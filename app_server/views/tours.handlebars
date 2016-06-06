@@ -5,8 +5,10 @@
     <div class="row">
         {{#each Tours}} ​
             <div class="col-md-6 text-center">
-                <a href="">
+                <a href="/tours/{{this.id}}">
+                	{{this.id}}
                     <h4 class="">{{this.tour_name}}</h4>
+                    {{this.Itineraries.0.description}}
                     <img src="{{this.map_image}}" width="380" class="img-thumbnail text-center">
                 </a>
             </div>
