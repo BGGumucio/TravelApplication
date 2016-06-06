@@ -40,6 +40,10 @@ var models = require('./app_api/models');
 
 app.use('/', require('./app_server/routes/loginRoutes'));
 app.use('/users', require('./app_api/routes/userRoutes'));
+
+//cart stuff:
+app.use('/cart', require('./app_server/routes/cartRoutes'));
+
 //{force: true} add after adding model
 app.use(express.static(__dirname + '/public'));
 
