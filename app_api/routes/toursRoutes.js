@@ -4,6 +4,8 @@ var toursCtrl = require('../controllers/toursCtrl');
 
 
 router.get("/getAllTours", toursCtrl.allTours);
+router.get('/:id', toursCtrl.getOne);
+
 
 // router.get('/:uid/tourss', toursCtrl.index);
 // router.get('/:uid/tourss/:tid', toursCtrl.show);
