@@ -1,28 +1,13 @@
-<!-- <h1>Index</h1> -->
-
-<!-- {{#if user}}
-<h3>Welcome {{user.first_name}} {{user.last_name}}</h3>
-<h3>{{user.username}}</h3>
-{{else}}
-<h3>Welcome, Guest</h3>
-
-{{/if}} -->
-
-
-<!-- <div class="container"> -->
-
 <div class="imageAndText">
-  <img src="/images/home1.jpg" class="align-center img-responsive" alt="" width="1600"/>
-  <div class="col">
-    <div class="col-sm-4">
-      {{#if user}}
-      <h4>Welcome {{user.first_name}} {{user.last_name}} {{user.username}}</h4>
-      <!-- <h3>{{user.username}}</h3> -->
-      {{else}}
-      <h4>Welcome, Guest</h4>
-      {{/if}}
+    <img src="/images/home1.jpg" class="align-center img-responsive" alt="" width="1600" />
+    <div class="col">
+        <div class="col-sm-4">
+            <h1 class="introWelcome">Welcome</h1>
+            {{#if user}}
+                <h2 class="userPadding">{{user.first_name}} {{user.last_name}} {{user.username}}</h2>
+            {{else}}
+                <h2 class="userPadding">Guest</h2>
+            {{/if}}
+        </div>
     </div>
-  </div>
 </div>
-
-<!-- </div> -->
