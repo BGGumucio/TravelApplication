@@ -3,11 +3,13 @@ var bcrypt = require('bcryptjs');
 const saltRounds = 13;
 
 module.exports.index = function(req,res){
-	models.User.findAll({
-		include : [{
-			model : models.Tours
-		}]
-	})
+	models.User.findAll(
+// 	{
+// 		include : [{
+// 			model : models.Tours
+// 		}]
+// 	}
+	)
 		.then(function(users){
 			res.send(users);
 		})
