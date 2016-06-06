@@ -9,6 +9,6 @@ router.get('/signup', loginCtrl.signup);
 router.post('/register', loginCtrl.register);
 router.get('/logout', loginCtrl.logout);
 //TODO Delete check cookies
-router.get('/checkCookies, loginCtrl.checkCookies');
+router.get('/checkCookies', loginCtrl.checkCookies);
 
 module.exports = router;
