@@ -11,11 +11,10 @@ module.exports.getAll = function(req,res){
 };
 
 module.exports.getOne = function(req,res){
-	console.log("in get one on server side");
 	var id = req.params.id;
-	console.log(id);
     request.get('http://localhost:3000/api/tours/' + id, function(error,response,body){
         if (!error) {
+//         console.log(JSON.parse(body));
             res.render("singleTour", {Tour : JSON.parse(body)});
         } else {
             res.sendStatus(500);
