@@ -44,6 +44,10 @@ app.use('/users', require('./app_api/routes/userRoutes'));
 app.use('/tours', require('./app_api/routes/toursRoutes'));
 app.use('/bookings', require('./app_api/routes/bookingRoutes'));
 
+
+//cart stuff:
+app.use('/cart', require('./app_server/routes/cartRoutes'));
+
 //{force: true} add after adding model
 app.use(express.static(__dirname + '/public'));
 
