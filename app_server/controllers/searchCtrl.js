@@ -7,14 +7,17 @@ const saltRounds = 13;
 // var cookieParser = require('cookie-parser');
 // var credentials = require('../../credentials');
 // app.use(cookieParser(credentials.cookieSecret));
-
-module.exports.search = function(req,res) {
+module.exports.testPrintOut = function(req,res) {
 	//test so page will work TODO fix this:
-		user = {
-			first_name:"first test",
-			last_name:"last test",
-			email:"email"
-		}
 
+		console.log(req.body.search);
+	res.render('index', {user : req.user});
+};
+
+
+
+module.exports.test = function(req,res) {
+	//test so page will work TODO fix this:
+		console.log("in search test")
 	res.render('index', {user : req.user});
 };
