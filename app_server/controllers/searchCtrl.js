@@ -10,8 +10,8 @@ const saltRounds = 13;
 module.exports.testPrintOut = function(req,res) {
 	//test so page will work TODO fix this:
 
-		console.log(req.body.search);
-	res.render('index', {user : req.user});
+		console.log(JSON.parser(req.body).search);
+	res.render('index', {user : JSON.parse(req.user)});
 };
 
 
