@@ -11,7 +11,11 @@ const saltRounds = 13;
 module.exports.test = function(req,res) {
 	//test so page will work TODO fix this:
 		console.log('wtf');
+
 	res.send('index');
+
+
+
 };
 
 
@@ -19,5 +23,6 @@ module.exports.test = function(req,res) {
 module.exports.addToCart = function(req,res) {
 	//test so page will work TODO fix this:
 		console.log('sdflkjfjlk;sasdfakjkjl;fd');
+    res.cookie('testcookie',{tour:"tour test thing"},{signed:true});
 	res.send('index');
 };
