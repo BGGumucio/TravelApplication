@@ -14,7 +14,8 @@ module.exports.allTours = function(req,res){
 };
 
 
-module.exports.show = function(req,res){
+module.exports.getOne = function(req,res){
+	console.log(req.params.id + " =ID");
 	models.Tour.findById(req.params.id)
 		.then(function(tours){
 			res.json(tours);
