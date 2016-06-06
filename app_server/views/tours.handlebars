@@ -1,20 +1,16 @@
-<h1>All Tours</h1>
-
-
-<div class= "table-div">
-<table align="left" width="100%" position="absolute">
-{{#each Tours}} ​
-<tr width="100%">
-<td width="30%">
-<p>{{this.tour_name}}</p>
-</br>
-<img src="{{this.map_image}}" style="width:304px;height:304px;">
-</td>
-</tr>
-{{/each}}
-</table> 
-</div> 
-
-
-
-
+<div class="container-fluid">
+    <div class="text-center">
+        <h1><u>All Tours</u></h1>
+    </div>
+    <div class="row">
+        {{#each Tours}} ​
+            <div class="col-md-6 text-center">
+                <a href="">
+                    <h4 class="">{{this.tour_name}}</h4>
+                    <img src="{{this.map_image}}" width="380" class="img-thumbnail text-center">
+                </a>
+            </div>
+        {{/each}}
+    </div>
+</div>
+<!-- </div> -->

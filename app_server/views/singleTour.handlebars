@@ -1,5 +1,10 @@
-
-
+<div id="text-overlay" style="position: absolute; z-index: 3">
 {{Tour.tour_name}}
 </br>
-<img src="{{Tour.map_image}}" style="width:304px;height:304px;">
+</div>
+<img src="{{Tour.tour_image}}" style="width:100%;height:auto;position: relative; z-index: 0">
+
+{{Tour.tour_description}}
+
+{{Tour.Itineraries.0.description}}
+

@@ -16,8 +16,14 @@ module.exports.allTours = function(req,res){
 
 module.exports.getOne = function(req,res){
 	console.log(req.params.id + " =ID");
-	models.Tour.findById(req.params.id)
+	models.Tour.findById(req.params.id, {
+		include : [{
+			all : true
+		}]
+	})
 		.then(function(tours){
+			
+		
 			res.json(tours);
 		});
 };
