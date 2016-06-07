@@ -25,7 +25,7 @@ module.exports.checkCookies = function(req,res){
 	console.log(req.signedCookies);
 
   res.send(req.signedCookies);
-	
+
 };
 
 //go to login page
@@ -48,7 +48,8 @@ module.exports.authenticate = function(req,res) {
 			return res.render('login', {problem:'Please verify that user/password match is correct'});
 		}
 		req.login(user,function(err){
-
+			var tourList = [];
+			res.cookie('cart',tourList,{signed:true});
 			res.cookie('currentUser',{user:user},{signed:true});
 			return res.redirect('/');
 			 
