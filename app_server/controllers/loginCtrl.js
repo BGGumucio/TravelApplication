@@ -49,7 +49,7 @@ module.exports.authenticate = function(req,res) {
 		}
 		req.login(user,function(err){
 			var tourList = [];
-			res.cookie('cart',tourList,{signed:true});
+			// res.cookie('cart',tourList,{signed:true});
 			res.cookie('currentUser',{user:user},{signed:true});
 			return res.redirect('/');
 			 
@@ -89,6 +89,14 @@ module.exports.register = function(req,res) {
 };
 
 module.exports.logout = function(req,res) {
+
 	req.logout();
+
+
+	if(req.signedCookies.currentUser){
+		res.clearCookie('currentUser');
+
+	}
+
 	res.redirect('/');
 }

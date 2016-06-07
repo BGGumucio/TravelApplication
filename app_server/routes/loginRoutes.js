@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var loginCtrl = require('../controllers/loginCtrl');
+var cookie = require('cookie');
+
 
 router.get('/', loginCtrl.home);
 router.get('/login', loginCtrl.login);
