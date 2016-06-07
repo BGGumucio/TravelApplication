@@ -10,6 +10,10 @@
 .introWelcome {
   font-size: 1000%;
 }
+
+.introUser{
+  font-size: 300%;
+}
 .userPadding {
   padding-left:1em;
 }
@@ -22,4 +26,7 @@
 }
 .tourItin span{
   color: #2765B0;
+}
+.theWorld {
+  font-size: 200%;
 }
