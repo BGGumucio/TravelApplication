@@ -1,14 +1,38 @@
-<div id="text-overlay">
-{{Tour.tour_name}}
-</br>
+<div class="container">
+
+
+    <div class="text-center">
+        <h2>{{Tour.tour_name}}</h2>
+    </div>
+    </br>
+    <br>
+    <div class="text-center">
+
+        <img src="{{Tour.tour_image}}">
+    </div>
+    <br><br>
+    <div class="text-center">
+
+        <form class="" method="post">
+            <input class="btn btn-default" type="button" name="name" value="Add to Cart">
+        </form>
+    </div>
+    <br>
+    </br>
+
+    <div class="">
+
+        {{Tour.tour_description}}
+
+    </div>
+
+    <br>
+    <br>
+    <div class="">
+
+        {{#each Tour.Itineraries}}
+            <p>Day {{this.day}} : {{this.description}}</p> ​
+        {{/each}}
+    </div>
+
 </div>
-<img src="{{Tour.tour_image}}">
-</br>
-{{Tour.tour_description}}
-
-
-<br>
-<br>
- 	{{#each Tour.Itineraries}}
- 		<p>Day  {{this.day}} = {{this.description}}</p> ​
- 	{{/each}}
