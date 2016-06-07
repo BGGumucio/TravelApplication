@@ -4,8 +4,31 @@ var bcrypt = require('bcryptjs');
 const saltRounds = 13;
 
 module.exports.add = function(req,res) {
-	console.log(req.body);
+	var tourList = [];
+	console.log(req.body.tourId);
+	if (req.signedCookies.cart.tourList){
+			console.log("TOUR LIST ALREAY EXISTS");
+        var cart = req.signedCookies.cart;
+				tourList = cart.tourList;
+				console.log("TOUR LIST: " + tourList);
+
+        tourList.push(req.body.tourId);
+
+				console.log("TOUR LIST: " + tourList);
+
+				res.cookie('cart', tourList , {signed : true});
+        // res.send(tourList);
+
+    } else {
+			//here
+			console.log("TOUR LIST DOES NOT ALREAY EXISTS");
+			tourList.push(req.body.tourId);
+
+        res.cookie('cart', tourList, {signed : true});
+        // res.send(tourList);
+    }
 	res.render('index');
+
 };
 
 
