@@ -44,10 +44,14 @@ app.use('/users', require('./app_api/routes/userRoutes'));
 app.use('/api/tours', require('./app_api/routes/toursRoutes'));
 app.use('/bookings', require('./app_api/routes/bookingRoutes'));
 
+
+
 app.use('/tours', require('./app_server/routes/toursRoutes'));
 
 //cart stuff:
 app.use('/cart', require('./app_server/routes/cartRoutes'));
+//cart get thing?????
+app.use('/server/addToCart',require('./app_server/routes/cartRoutes'));
 
 //serach stuff:
 app.use('/search', require('./app_server/routes/searchRoutes'));
