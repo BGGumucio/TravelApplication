@@ -13,3 +13,17 @@ module.exports.allBookings = function(req,res){
 		res.send(err);
 	});
 };
+
+module.exports.createBooking = function(req,res) {
+	console.log("in create booking method");
+    var booking = req.body;
+    console.log(booking);
+    models.Booking.create(booking)
+        .then(function(bookings){
+            res.sendStatus(201);
+        })
+        .catch(function(err){
+            res.status(500);
+            res.send(err);   
+        });
+};
