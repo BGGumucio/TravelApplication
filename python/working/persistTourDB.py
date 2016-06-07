@@ -3,7 +3,7 @@ import datetime
 import getAPI
 
 START_TOUR_ID = 23000;
-NUMBER_OF_TOURS = 200;
+NUMBER_OF_TOURS = 500;
 
 
 def persistTours(startId,numberOfTours):
