@@ -1,13 +1,19 @@
 <div class="imageAndText">
     <img src="/images/home1.jpg" class="align-center img-responsive" alt="" width="1600" />
     <div class="col">
-        <div class="col-sm-4">
+        <div class="col-sm-7 col-md-offset-2">
             <h1 class="introWelcome">Welcome</h1>
             {{#if user}}
-                <h2 class="userPadding">{{user.first_name}} {{user.last_name}} {{user.username}}</h2>
+                <h2 class="introUser userPadding lead">{{user.first_name}} {{user.last_name}} {{user.username}}</h2>
             {{else}}
-                <h2 class="userPadding">Guest</h2>
+                <h2 class="introUser userPadding lead">Guest</h2>
             {{/if}}
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br>
+            <p class="lead text-muted theWorld userPadding">
+              the world awaits you ...
+            </p>
         </div>
+
     </div>
 </div>
