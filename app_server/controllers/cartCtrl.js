@@ -3,31 +3,56 @@ var models = require('../../app_api/models');
 var bcrypt = require('bcryptjs');
 const saltRounds = 13;
 
+// var cookie = require('cookie-parser');
+
 module.exports.add = function(req,res) {
 	var tourList = [];
 	console.log(req.body.tourId);
-	if (req.signedCookies.cart.tourList){
-			console.log("TOUR LIST ALREAY EXISTS");
-        var cart = req.signedCookies.cart;
-				tourList = cart.tourList;
-				console.log("TOUR LIST: " + tourList);
+	console.log(req.signedCookies.currentUser);
+	if(req.signedCookies.currentUser){
 
-        tourList.push(req.body.tourId);
+		var userCookie = req.signedCookies.currentUser;
 
-				console.log("TOUR LIST: " + tourList);
+		var userName = req.signedCookies.currentUser.user.username;
+		// var userJSON = JSON.parse(userCookie);
+		// var cookieStuff = cookie(userCookie);
+		// var userName = req.signedCookies.currentUser.username;
+		console.log(req.user);
 
-				res.cookie('cart', tourList , {signed : true});
-        // res.send(tourList);
+		console.log('book stuff with user username: '+ userName +'  and tourid: ' + req.body.tourId );
+		//after book logged in
+		res.render('index');
 
-    } else {
-			//here
-			console.log("TOUR LIST DOES NOT ALREAY EXISTS");
-			tourList.push(req.body.tourId);
+	}else{
+		//after book not logged in
+		//go to logged in page
+		res.render('index');
+		console.log('USER NOT FOUND');
 
-        res.cookie('cart', tourList, {signed : true});
-        // res.send(tourList);
-    }
-	res.render('index');
+	}
+
+	// if (req.signedCookies.cart.tourList){
+	// 		console.log("TOUR LIST ALREAY EXISTS");
+  //       var cart = req.signedCookies.cart;
+	// 			tourList = cart.tourList;
+	// 			console.log("TOUR LIST: " + tourList);
+	//
+  //       tourList.push(req.body.tourId);
+	//
+	// 			console.log("TOUR LIST: " + tourList);
+	//
+	// 			res.cookie('cart', tourList , {signed : true});
+  //       // res.send(tourList);
+	//
+  //   } else {
+	// 		//here
+	// 		console.log("TOUR LIST DOES NOT ALREAY EXISTS");
+	// 		tourList.push(req.body.tourId);
+	//
+  //       res.cookie('cart', tourList, {signed : true});
+  //       // res.send(tourList);
+  //   }
+
 
 };
 
