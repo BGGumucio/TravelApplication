@@ -13,6 +13,10 @@
 .userPadding {
   padding-left:1em;
 }
-body{
+.head{
 	background-color: #2765B0;
+}
+
+.wordColors {
+  color: #2765B0;
 }

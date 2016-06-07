@@ -1,6 +1,6 @@
 <div class="container">
     <div class="text-center">
-        <h2>{{Tour.tour_name}}</h2>
+        <h2 class="wordColors">{{Tour.tour_name}}</h2>
     </div>
     <br>
     <br>
@@ -21,14 +21,14 @@
 
     <div class="">
 
-        <h3 class="text-center"><u>Tour Description</u></h3> {{Tour.tour_description}}
+        <h3 class="wordColors text-center"><u>Tour Description</u></h3> {{Tour.tour_description}}
 
     </div>
 
     <br>
     <br>
     <div class="">
-        <h3 class="text-center"><u>Itineraries</u></h3>
+        <h3 class="wordColors text-center"><u>Itineraries</u></h3>
 
         {{#each Tour.Itineraries}}
             <p>Day {{this.day}} : {{this.description}}</p> ​
