@@ -42,7 +42,7 @@ var models = require('./app_api/models');
 app.use('/', require('./app_server/routes/loginRoutes'));
 app.use('/users', require('./app_api/routes/userRoutes'));
 app.use('/api/tours', require('./app_api/routes/toursRoutes'));
-app.use('/bookings', require('./app_api/routes/bookingRoutes'));
+app.use('/api/bookings', require('./app_api/routes/bookingRoutes'));
 
 
 

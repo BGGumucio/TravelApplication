@@ -1,6 +1,7 @@
 var passportConfig = require('../../config/passportConfig');
 var models = require('../../app_api/models');
 var bcrypt = require('bcryptjs');
+var request = require('request');
 const saltRounds = 13;
 
 // var cookie = require('cookie-parser');
@@ -14,6 +15,32 @@ module.exports.add = function(req,res) {
 		var userCookie = req.signedCookies.currentUser;
 
 		var userName = req.signedCookies.currentUser.user.username;
+		
+		var tourID = req.body.tourId;
+		
+		var currentDate = new Date();
+		
+		console.log("before request post");
+		request.post({
+        url: 'http://localhost:3000/api/bookings/createBooking',
+        headers: {
+            'Content-type': 'application/json'
+        },
+        json: {
+            user_username: userName,
+            tour_id: tourID,
+            date_of_booking : currentDate
+        }
+    }, function(error, response, body) {
+        if (!error && response.statusCode == 201) {
+            res.locals.flash = 'Thank you for booking with Aviato!'
+            res.sendStatus(200);
+        }
+        else{
+        	console.log(response.statusCode);
+        }
+    });				
+		
 		// var userJSON = JSON.parse(userCookie);
 		// var cookieStuff = cookie(userCookie);
 		// var userName = req.signedCookies.currentUser.username;
