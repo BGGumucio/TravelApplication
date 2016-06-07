@@ -51,7 +51,9 @@ module.exports.authenticate = function(req,res) {
 			var tourList = [];
 			// res.cookie('cart',tourList,{signed:true});
 			res.cookie('currentUser',{user:user},{signed:true});
-			return res.redirect('/');
+
+			res.render('index',{user:user});
+			// return res.redirect('/');
 			 
 
 		})
