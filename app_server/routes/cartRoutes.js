@@ -5,6 +5,7 @@ var cartCtrl = require('../controllers/cartCtrl');
 // router.get('/AllTours', cartCtrl.getAll);
 router.post('/addToCart', cartCtrl.add);
 
+
 module.exports = router;
 
 

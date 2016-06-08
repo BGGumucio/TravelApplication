@@ -34,8 +34,7 @@ module.exports.add = function(req,res) {
         }
     }, function(error, response, body) {
         if (!error && response.statusCode == 201) {
-            res.locals.flash = 'Thank you for booking with Aviato!'
-            res.sendStatus(200);
+            res.send = 'Thank you for booking with Aviato!'
         }
         else{
         	console.log(response.statusCode);

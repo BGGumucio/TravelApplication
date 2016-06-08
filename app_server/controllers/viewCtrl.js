@@ -23,12 +23,23 @@ module.exports.getOne = function(req,res){
 };
 
 module.exports.myBookings = function(req,res){
-    request.get('http://localhost:3000/api/bookings/getMyBookings', function(error,response,body){
-        if (!error) {
-        console.log("in my bookings frontend");
-            res.render("myBookings", {myBookings : JSON.parse(body)});
-        } else {
-            res.sendStatus(500);
+	var userName = req.signedCookies.currentUser.user.username;
+		request.post({
+        url: 'http://localhost:3000/api/bookings/myBookings',
+        headers: {
+            'Content-type': 'application/json'
+        },
+        json: {
+            user_username: userName
         }
-    });
+    }, function(error, response, body) {
+        if (!error && response.statusCode == 201) {
+          	console.log("in my bookings frontend");
+        	console.log(body);
+            res.render("myBookings", {myBookings : JSON.parse(body)});
+        }
+        else{
+        	res.sendStatus(500);
+        }
+    });	
 };

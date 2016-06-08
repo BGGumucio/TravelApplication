@@ -15,8 +15,13 @@ module.exports.allBookings = function(req,res){
 };
 
 module.exports.myBookings = function(req,res){
-	console.log("in my Bookings method");
-	var user = req.signedCookies.currentUser.user.username;
+	console.log("in MY Bookings method");
+	//var user = req.signedCookies.currentUser.user.username;
+	
+    //var userName = req.user.username;
+	
+	console.log(req.body);
+	console.log('user above');
 	models.Booking.findAll({
   						where: {
     					user_username: user
