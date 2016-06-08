@@ -27,7 +27,6 @@ module.exports.myBookings = function(req,res){
 	})
 	.catch(function(err){
 		console.error(err);
-		res.status(500);
 		res.send(err);
 	});
 };
@@ -39,13 +38,11 @@ module.exports.createBooking = function(req,res) {
     console.log(booking);
     models.Booking.create(booking)
         .then(function(bookings){
-            res.sendStatus(201);
+            res.render('index');
         })
         .catch(function(err){
-            res.status(500);
             res.send(err);
         });
 
 				//redirect to index TODO change to thank you page or something?
-				res.render('index');
 };
