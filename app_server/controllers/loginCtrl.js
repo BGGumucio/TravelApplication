@@ -50,8 +50,8 @@ module.exports.authenticate = function(req,res) {
 		req.login(user,function(err){
 			var tourList = [];
 			// res.cookie('cart',tourList,{signed:true});
-			res.cookie('currentUser',{user:user},{signed:true});
-
+			//res.cookie('currentUser',{user:user},{signed:true});
+			console.log(user);
 			res.render('index',{user:user});
 			// return res.redirect('/');
 			 

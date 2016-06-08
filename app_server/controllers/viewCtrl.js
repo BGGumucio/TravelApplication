@@ -23,7 +23,8 @@ module.exports.getOne = function(req,res){
 };
 
 module.exports.myBookings = function(req,res){
-	var userName = req.signedCookies.currentUser.user.username;
+		console.log("before post request");
+	var userName = req.user.username;
 		request.post({
         url: 'http://localhost:3000/api/bookings/myBookings',
         headers: {
@@ -33,12 +34,13 @@ module.exports.myBookings = function(req,res){
             user_username: userName
         }
     }, function(error, response, body) {
-        if (!error && response.statusCode == 201) {
+        if (!error) {
           	console.log("in my bookings frontend");
         	console.log(body);
-            res.render("myBookings", {myBookings : JSON.parse(body)});
+            res.render("myBookings", {myBookings : body});
         }
         else{
+        	console.log(error);
         	res.sendStatus(500);
         }
     });	
