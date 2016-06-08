@@ -18,6 +18,7 @@ module.exports = function(sequelize, DataTypes) {
         zipcode: DataTypes.INTEGER,
         type_of_user: DataTypes.INTEGER
     }, {
+    	underscored: true,
        	timestamps: false,
         classMethods: {
             associate : function(models) {

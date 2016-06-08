@@ -21,3 +21,15 @@ module.exports.getOne = function(req,res){
         }
     })
 };
+
+module.exports.MYBOOKINGS = function(req,res){
+    request.get('http://localhost:3000/api/bookings/getMyBookings', function(error,response,body){
+        if (!error) {
+        console.log("in my bookings frontend");
+            res.render("myBookings", {myBookings : JSON.parse(body)});
+        } else {
+            res.sendStatus(500);
+        }
+    })
+};
+

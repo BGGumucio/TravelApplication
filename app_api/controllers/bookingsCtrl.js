@@ -14,10 +14,9 @@ module.exports.allBookings = function(req,res){
 	});
 };
 
-module.exports.allBookings = function(req,res){
+module.exports.myBookings = function(req,res){
 	console.log("in my Bookings method");
-	console.log(req.user.user_username);
-	//var user = 
+	var user = req.signedCookies.currentUser.user.username;
 	models.Booking.findAll({
   						where: {
     					user_username: user
