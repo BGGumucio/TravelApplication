@@ -1,0 +1,5 @@
+
+
+IGNORE THIS FILE!!!
+
+INSERT INTO `bookings` (`user_username`, `tour_id`, `paid_status`, `date_of_booking`) VALUES ( 'test@test.com', 23010, 'PAID', '2016-06-06');INSERT INTO `bookings` (`user_username`, `tour_id`, `paid_status`, `date_of_booking`) VALUES ('test@test.com', 23010, NULL, NULL);INSERT INTO `bookings` (`user_username`, `tour_id`, `paid_status`, `date_of_booking`) VALUES ('test2@test.com', 23010, NULL, NULL);INSERT INTO `bookings` (`user_username`, `tour_id`, `paid_status`, `date_of_booking`) VALUES ( 'test@test.com', 23003, NULL, '2016-06-07');INSERT INTO `bookings` (`user_username`, `tour_id`, `paid_status`, `date_of_booking`) VALUES ( 'test@test.com', 23477, NULL, '2016-06-07');INSERT INTO `bookings` (`user_username`, `tour_id`, `paid_status`, `date_of_booking`) VALUES ( 'test@test.com', 23000, 'PAID', '2016-06-07');INSERT INTO `bookings` (`user_username`, `tour_id`, `paid_status`, `date_of_booking`) VALUES ( 'test@test.com', 23023, 'PAID', '2016-06-07');INSERT INTO `bookings` (`user_username`, `tour_id`, `paid_status`, `date_of_booking`) VALUES ( 'test@test.com', 23000, 'PAID', '2016-06-07');
