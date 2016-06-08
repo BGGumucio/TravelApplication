@@ -4,7 +4,7 @@ import getAPI
 import random
 
 START_TOUR_ID = 23000;
-NUMBER_OF_TOURS = 500;
+NUMBER_OF_TOURS = 50;
 
 
 def persistTours(startId,numberOfTours):
