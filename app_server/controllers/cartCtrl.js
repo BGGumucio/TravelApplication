@@ -29,6 +29,7 @@ module.exports.add = function(req,res) {
         json: {
             user_username: userName,
             tour_id: tourID,
+            paid_status : "PAID",
             date_of_booking : currentDate
         }
     }, function(error, response, body) {
@@ -48,12 +49,13 @@ module.exports.add = function(req,res) {
 
 		console.log('book stuff with user username: '+ userName +'  and tourid: ' + req.body.tourId );
 		//after book logged in
-		res.render('index');
+		res.redirect("/");
+		//res.render('index', {user : req.user});
 
 	}else{
 		//after book not logged in
 		//go to logged in page
-		res.render('index');
+		res.render('index', {user : req.user});
 		console.log('USER NOT FOUND');
 
 	}
