@@ -66,7 +66,10 @@
 					<li><a href="/signup">Register</a></li>
 					{{/if}}
 					{{#if user}}
-					<li><a href="/tours/myBookings">My Bookings</a></li>
+
+					<form class="" action="/tours/myBookings" method="post">
+						<input type="submit" name="name" value="My Bookings">
+					</form>
 					<li><a href="/logout">Logout</a></li>
 					{{/if}}
 
