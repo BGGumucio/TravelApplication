@@ -24,6 +24,9 @@ module.exports.createBooking = function(req,res) {
         })
         .catch(function(err){
             res.status(500);
-            res.send(err);   
+            res.send(err);
         });
+
+				//redirect to index TODO change to thank you page or something?
+				res.render('index');
 };
