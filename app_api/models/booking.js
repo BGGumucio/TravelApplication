@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataTypes) {
         	autoIncrement: true,
         	allowNull: false
 		},
-        user_id : {
+        user_username : {
             type: DataTypes.STRING,
             allowNull: false
         },
@@ -17,15 +17,16 @@ module.exports = function(sequelize, DataTypes) {
         },
         paid_status: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         date_of_booking: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         }
 
     }, {
     	timestamps: false,
+    	underscored: true,
         classMethods: {
           //write the logic for the join table
           associate : function(models) {
@@ -40,7 +41,7 @@ module.exports = function(sequelize, DataTypes) {
                 Booking.belongsTo(models.User, {
                     onDelete : "CASCADE",
                     foreignKey : {                    
-                    	field : "user_id",
+                    	field : "user_username",
                         allowNull : false // must be associated
         			}    			
         		});

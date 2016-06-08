@@ -10,6 +10,23 @@
 .introWelcome {
   font-size: 1000%;
 }
+
+.introUser{
+  font-size: 300%;
+}
 .userPadding {
   padding-left:1em;
+}
+.head{
+	background-color: #2765B0;
+}
+
+.wordColors {
+  color: #2765B0;
+}
+.tourItin span{
+  color: #2765B0;
+}
+.theWorld {
+  font-size: 200%;
 }

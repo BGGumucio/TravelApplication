@@ -1,6 +1,6 @@
 <div class="container">
     <div class="text-center">
-        <h2>{{Tour.tour_name}}</h2>
+        <h2 class="wordColors">{{Tour.tour_name}}</h2>
     </div>
     <br>
     <br>
@@ -12,7 +12,7 @@
         <form class="" action="cart/addToCart" method="post">
 
 <input type="hidden" name="tourId" value="{{Tour.id}}" />
-<button type="submit" class="btn btn-default" type="submit">Book Now!</button>
+<button type="submit" class="btn btn-primary" type="submit">Book Now!</button>
 
         </form>
     </div>
@@ -21,17 +21,16 @@
 
     <div class="">
 
-        <h3 class="text-center"><u>Tour Description</u></h3> {{Tour.tour_description}}
+        <h3 class="wordColors text-center"><u>Tour Description</u></h3>
+        <p class="lead">{{Tour.tour_description}}</p>
 
     </div>
-
     <br>
-    <br>
-    <div class="">
-        <h3 class="text-center"><u>Itineraries</u></h3>
+    <div class="tourItin">
+        <h3 class="wordColors text-center"><u>Itineraries</u></h3>
 
         {{#each Tour.Itineraries}}
-            <p>Day {{this.day}} : {{this.description}}</p> ​
+            <p class=""><span class="lead"><strong>Day {{this.day}} :</strong></span> {{this.description}}</p> ​
         {{/each}}
     </div>
 

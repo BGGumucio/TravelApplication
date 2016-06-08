@@ -2,6 +2,7 @@ module.exports = function(sequelize, DataTypes) {
     var Tour = sequelize.define("Tour", {
         tour_name : DataTypes.STRING,
         map_image : DataTypes.STRING,
+        num_avail : DataTypes.INTEGER,
         tour_image : DataTypes.STRING,
         tour_description : DataTypes.STRING, 
         start_location : DataTypes.STRING,
