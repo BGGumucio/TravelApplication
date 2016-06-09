@@ -28,7 +28,7 @@ passport.use(new LocalStrategy(
 	}));
 
 passport.serializeUser(function(user,callback){
-	callback(null, user.id);
+	callback(null, user.username);
 });
 
 passport.deserializeUser(function(id,callback){
