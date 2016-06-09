@@ -38,6 +38,7 @@ module.exports.myBookings = function(req,res){
 
           	console.log("in my bookings frontend");
         	console.log(body);
+          // console.log(response.cookie);
             res.render("myBookings", {myBookings : body});
 
         }
