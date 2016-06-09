@@ -76,9 +76,12 @@
 					{{/if}}
 					{{#if user}}
 
-					<form class="" action="/tours/myBookings" method="post">
-						<input type="submit" name="name" value="My Bookings">
+					<li>
+
+				<form class="bookcss" action="/tours/myBookings" method="post">
+						<input class="form-control" type="submit" name="name" value="My Bookings">
 					</form>
+				</li>
 					<li><a href="/logout">Logout</a></li>
 					{{/if}}
 
@@ -103,14 +106,12 @@
 
 	{{{body}}}
 
-		<footer class="navbar-default navbar-bottom">
-			<div class="container">
+		<footer class="navbar-default navbar-bottom footer">
+			<!-- <div class="container"> -->
 				<br>
 				<p class="text-muted text-center">Not for commercial use. Educational usage only.</p>
-				<p class="text-center">
-					Copyright 2016
-				</p>
-			</div>
+		
+			<!-- </div> -->
 		</footer>
 
 
