@@ -5,7 +5,7 @@ var bookingsCtrl = require('../controllers/bookingsCtrl');
 
 router.get("/getAllBookings", bookingsCtrl.allBookings);
 
-router.get("/getMyBookings", bookingsCtrl.myBookings);
+router.post("/getMyBookings", bookingsCtrl.myBookings);
 
 router.post("/createBooking", bookingsCtrl.createBooking);
 

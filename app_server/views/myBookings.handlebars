@@ -1,1 +1,13 @@
 TESTING 1,2,3
+
+{{user_username}}
+
+<table>
+<tr> 
+<td> Booking ID</td><td>Tour ID</td><td> Date</td>
+</tr>
+{{#each myBookings}}
+<tr> ​
+<td>{{this.booking_id}}</td><td>{{this.tour_id}}</td><td>{{this.date_of_booking}}</td>
+</tr>
+{{/each}}
