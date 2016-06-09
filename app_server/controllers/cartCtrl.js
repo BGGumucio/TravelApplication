@@ -19,7 +19,7 @@ module.exports.add = function(req,res) {
         var tourID = req.body.tourId;
 
         var currentDate = new Date();
-
+        bookedDate = "" + (currentDate.getYear() + 1900 )+ "-" +currentDate.getMonth() + "-" +currentDate.getDay();
         console.log("before request post");
         request.post({
         url: 'http://localhost:3000/api/bookings/createBooking',
@@ -30,7 +30,7 @@ module.exports.add = function(req,res) {
             user_username: userName,
             tour_id: tourID,
             paid_status : "PAID",
-            date_of_booking : currentDate
+            date_of_booking : bookedDate
         }
     }, function(error, response, body) {
         if (!error && response.statusCode == 201) {
