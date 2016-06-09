@@ -28,7 +28,7 @@ module.exports.myBookings = function(req,res){
 		console.log("before post request");
 	var userName = req.user.username;
 		request.post({
-        url: 'http://localhost:3000/api/bookings/myBookings',
+        url: 'http://localhost:3000/api/bookings/getMyBookings',
         headers: {
             'Content-type': 'application/json'
         },
