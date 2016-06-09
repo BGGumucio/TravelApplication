@@ -1,13 +1,39 @@
-TESTING 1,2,3
+<div class="container">
 
-{{user_username}}
+    <div class="text-center">
+        <h1 class="wordColors"><strong>My Bookings</strong></h1>
+    </div>
+    {{user_username}}
+    <br>
+    <div class="align-center">
+        <table class="table">
+            <thead class="text-center">
+                <tr>
+                    <td><b>Booking ID</b></td>
+                    <td><b>Tour ID</b></td>
+                    <td><b>Date</b></td>
+                    <td>
 
-<table>
-<tr> 
-<td> Booking ID</td><td>Tour ID</td><td> Date</td>
-</tr>
-{{#each myBookings}}
-<tr> ​
-<td>{{this.booking_id}}</td><td>{{this.tour_id}}</td><td>{{this.date_of_booking}}</td>
-</tr>
-{{/each}}
+                    </td>
+                </tr>
+            </thead>
+            <tbody class="text-center">
+
+                {{#each myBookings}}
+                    <tr> ​
+                        <td>{{this.booking_id}}</td>
+                        <td>{{this.tour_id}}</td>
+                        <td>{{this.date_of_booking}}</td>
+                        <td>
+                            <form class="" action="#" method="post">
+                                <button class="btn btn-danger" type="submit" name="button">
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>&nbsp;CANCEL</button>
+                            </form>
+                        </td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        <br><br><br>
+    </div>
+</div>
