@@ -4,5 +4,5 @@ Skill Distillery Group Project - Travel application written in node.js with a bo
 * Brenton Gumucio https://github.com/BGGumucio
 * Bruno Trillo http://www.trillo.me/
 * Angel Moriera http://www.armoreira.com/
-* Chad Arroyo https://github.com/ChadChadington
+* Chad Arroyo https://chadington.com/
 * Alex Peterson http://www.alexmpeterson.com/projects.php
