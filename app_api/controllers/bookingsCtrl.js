@@ -26,6 +26,8 @@ module.exports.myBookings = function(req,res){
 		res.json(bookings);
 	})
 	.catch(function(err){
+		//first
+		console.log("skldjfldksjfdlksjf");
 		console.error(err);
 		res.send(err);
 	});
