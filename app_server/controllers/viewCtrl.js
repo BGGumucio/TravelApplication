@@ -3,7 +3,7 @@ request = require ("request");
 module.exports.getAll = function(req,res){
     request.get('http://localhost:3000/api/tours/getAllTours', function(error,response,body){
         if (!error) {
-            res.render("tours", {Tours : JSON.parse(body), user : req.user});
+            res.render("tours", {Tours : JSON.parse(body)});
         } else {
             res.sendStatus(500);
         }
@@ -15,18 +15,20 @@ module.exports.getOne = function(req,res){
     request.get('http://localhost:3000/api/tours/' + id, function(error,response,body){
         if (!error) {
 //         console.log(JSON.parse(body));
-            res.render("singleTour", {Tour : JSON.parse(body), user : req.user});
+            res.render("singleTour", {Tour : JSON.parse(body)});
         } else {
             res.sendStatus(500);
         }
     });
 };
 
+
+
 module.exports.myBookings = function(req,res){
 		console.log("before post request");
 	var userName = req.user.username;
 		request.post({
-        url: 'http://localhost:3000/api/bookings/getMyBookings',
+        url: 'http://localhost:3000/api/bookings/myBookings',
         headers: {
             'Content-type': 'application/json'
         },

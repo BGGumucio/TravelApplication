@@ -4,7 +4,7 @@ var searchCtrl = require('../controllers/searchCtrl');
 
 // router.get('/',searchCtrl.go);
 // router.get('/',searchCtrl.getAll);
-router.get('/:country',searchCtrl.country)
+router.get('/:continent',searchCtrl.continent)
 
 // router.get('/test',searchCtrl.test);
 

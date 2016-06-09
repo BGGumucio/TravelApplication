@@ -6,7 +6,8 @@ var toursCtrl = require('../controllers/toursCtrl');
 router.get("/getAllTours", toursCtrl.allTours);
 router.get('/:id', toursCtrl.getOne);
 
-
+//TODO make get country method in tours ctrl
+router.get('/getByContinent/:continent',toursCtrl.getByContinent);
 // router.get('/:uid/tourss', toursCtrl.index);
 // router.get('/:uid/tourss/:tid', toursCtrl.show);
 // router.post('/:uid/tourss', toursCtrl.create);

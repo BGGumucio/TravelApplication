@@ -13,6 +13,21 @@ module.exports.allTours = function(req,res){
 	});
 };
 
+module.exports.getByContinent = function(req,res){
+	console.log("IN APP API CONTINEITNETINETINETIN wowowowowowowowowowoewoewowoq2wo02qwo2wowo");
+	console.log(req.params.continent + " =ID");
+	models.Tour.findAll({
+  						where: {
+    					continent: req.params.continent
+    					}
+    				})
+		.then(function(tours){
+
+
+			res.json(tours);
+		});
+
+};
 
 module.exports.getOne = function(req,res){
 	console.log(req.params.id + " =ID");
@@ -22,8 +37,8 @@ module.exports.getOne = function(req,res){
 		}]
 	})
 		.then(function(tours){
-			
-		
+
+
 			res.json(tours);
 		});
 };

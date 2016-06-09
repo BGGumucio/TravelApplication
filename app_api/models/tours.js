@@ -7,6 +7,7 @@ module.exports = function(sequelize, DataTypes) {
         tour_description : DataTypes.STRING,
         start_location : DataTypes.STRING,
         end_location : DataTypes.STRING,
+        continent : DataTypes.STRING,
         cost: DataTypes.STRING,
         start_date : DataTypes.STRING,
         end_date : DataTypes.STRING
