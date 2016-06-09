@@ -24,7 +24,8 @@
                         <td>{{this.tour_id}}</td>
                         <td>{{this.date_of_booking}}</td>
                         <td>
-                            <form class="" action="#" method="post">
+                            <form class="" action="/deleteBooking/deleteBooking" method="post">
+                              <input name="bookingId" type="hidden" value="{{this.booking_id}}" />
                                 <button class="btn btn-danger" type="submit" name="button">
                                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>&nbsp;CANCEL</button>
                             </form>

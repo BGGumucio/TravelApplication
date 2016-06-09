@@ -53,6 +53,13 @@ app.use('/tours', require('./app_server/routes/toursRoutes'));
 
 //cart stuff:
 app.use('/cart', require('./app_server/routes/cartRoutes'));
+
+//deleteBooking
+//http://localhost:3000/api/tours/deleteBooking/
+app.use('/deleteBooking',require('./app_server/routes/toursRoutes'));
+//rpt
+app.use('/api/bookings', require('./app_api/routes/bookingRoutes'));
+
 //cart get thing?????
 app.use('/server/addToCart',require('./app_server/routes/cartRoutes'));
 

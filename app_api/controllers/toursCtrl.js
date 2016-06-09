@@ -30,6 +30,7 @@ module.exports.getByContinent = function(req,res){
 };
 
 module.exports.getOne = function(req,res){
+	console.log("get one - toursCtrl app_api");
 	console.log(req.params.id + " =ID");
 	models.Tour.findById(req.params.id, {
 		include : [{
