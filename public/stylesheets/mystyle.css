@@ -1,34 +1,46 @@
 .head {}
 .foot {}
-.jumbotron > img {
+.jumbotron> img {
     display: block;
     margin: 0 auto;
 }
-.imageAndText {position: relative;}
-.imageAndText .col {position: absolute; z-index: 1; top: 0; left: 0;}
-
-.introWelcome {
-  font-size: 1000%;
+.imageAndText {
+    position: relative;
 }
-
-.introUser{
-  font-size: 300%;
+.imageAndText .col {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+.introWelcome {
+    font-size: 1000%;
+}
+.introUser {
+    font-size: 300%;
 }
 .userPadding {
-  padding-left:1em;
+    padding-left: 1em;
 }
-.head{
-	background-color: #2765B0;
+.head {
+    background-color: #2765B0;
 }
-
 .wordColors {
-  color: #2765B0;
+    color: #2765B0;
 }
-.tourItin span{
-  color: #2765B0;
+.tourItin span {
+    color: #2765B0;
 }
 .theWorld {
-  font-size: 200%;
+    font-size: 200%;
 }
-.other-color{
-  }
+.other-color {}
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+}
+.bookcss {
+  padding-top: 9px;
+}
