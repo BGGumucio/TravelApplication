@@ -35,20 +35,15 @@ module.exports.myBookings = function(req,res){
         }
     }, function(error, response, body) {
         if (!error) {
-<<<<<<< HEAD
-        console.log("in my bookings frontend");
-            res.render("myBookings", {myBookings : body});
-        } else {
-            res.sendStatus(500);
-=======
+
           	console.log("in my bookings frontend");
         	console.log(body);
             res.render("myBookings", {myBookings : body});
->>>>>>> 8bf161f22b9dcde10ed7f0ef5d7973d8d17c5f8c
+
         }
         else{
         	console.log(error);
         	res.sendStatus(500);
         }
-    });	
+    });
 };
