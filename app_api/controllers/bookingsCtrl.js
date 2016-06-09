@@ -16,7 +16,8 @@ module.exports.allBookings = function(req,res){
 
 module.exports.myBookings = function(req,res){
 	console.log("in MY Bookings method");
-	//var user = req.signedCookies.currentUser.user.username;
+	var user = req.body.user_username;
+	console.log(user + " user name");
 	
     //var userName = req.user.username;
 	
