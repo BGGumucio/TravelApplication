@@ -8,53 +8,22 @@ import string
 APIKEY = 'live_ba297406f66b04879ccb159952ab1ee3d3726002'
 gapi = Client(application_key=APIKEY)
 
-#x is start
-#y is range
-
-
-
-
-def getTourByRange(tourId,numberOfTours):
-    for t in range(0,numberOfTours):
-        tourItems = getTour(tourId + t)
-        # print tourItems
-
 def getTour(tourId):
     try:
 
         print 'getting tour id: ' + str(tourId)
         iteneraryId =  gapi.tour_dossiers.get(tourId).structured_itineraries[0].id
-
         tourDossier = gapi.tour_dossiers.get(tourId)
-        # print "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
         name =  tourDossier.name
         description = tourDossier.description
-
-        #geography is of dictionary type
         geo = tourDossier.geography
-        # print "START CITY: "
         startCity =  geo.values()[0].values()[0]
-
-        # print "START COUNTRY: "
         startCountry = geo.values()[1].values()[2]
-
-        ####push to start location in db
         startLocation =  startCity + ", " + startCountry
-
-        #end country works
         endCountry = geo.values()[4].values()[2]
-        #error
         endCity = geo.values()[6].values()[0]
-
-
-        ###push to end location in db
         endLocation = endCity + ", " + endCountry
-
-        ##region
         region = geo.values()[2].values()[0]
-        # print "REGION (continent): " + region
-
-
         price = 0
 
         tripDataSet = tourDossier.advertised_departures
@@ -91,7 +60,7 @@ def getTour(tourId):
         # description contains sql keywords
         return tourItemsUnicode
     except Exception as e:
-        print e 
+        print e
 
 
 
