@@ -24,10 +24,18 @@ module.exports.deleteBooking = function(req, res) {
         function(error, response, body) {
             if (!error && response.statusCode == 201) {
                 res.send = 'Thank you for booking with Aviato!'
+
             } else {
                 console.log(response.statusCode);
+
             }
+
+
         }
+
+
+
+
         // request.post('http://localhost:3000/api/bookings/deleteBooking/', function(error,response,body){
         //     if (!error) {
         //       console.log("BODY: " + body);
@@ -42,7 +50,12 @@ module.exports.deleteBooking = function(req, res) {
         //         res.sendStatus(500);
         //     }
         // });
+
     })
+    console.log("Please redirect to indexxxxxxx");
+    res.render('index', {
+        user: req.user
+    });
 };
 
 
