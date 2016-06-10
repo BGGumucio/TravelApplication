@@ -39,17 +39,16 @@ app.use(passportConfig.session());
 var models = require('./app_api/models');
 
 
-
 app.use('/', require('./app_server/routes/loginRoutes'));
 app.use('/users', require('./app_api/routes/userRoutes'));
 app.use('/api/tours', require('./app_api/routes/toursRoutes'));
 app.use('/api/bookings', require('./app_api/routes/bookingRoutes'));
 
 
-app.use('/api/search', require('./app_api/routes/searchRoutes'));
-
 
 app.use('/tours', require('./app_server/routes/toursRoutes'));
+//app.use('/bookings', require('./app_server/routes/bookingsRoutes'));
+
 
 //cart stuff:
 app.use('/cart', require('./app_server/routes/cartRoutes'));

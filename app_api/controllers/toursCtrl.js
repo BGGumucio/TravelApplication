@@ -2,6 +2,10 @@ var models = require('../models');
 
 
 module.exports.allTours = function(req,res){
+// 	var tourId = 
+// 	models.Booking.count({ where: ["tour_id == ?", tourId] }).then(function(numBookings) {
+//   console.log("There are " + c + " projects with an id greater than 25.")
+// })
 	models.Tour.findAll()
 	.then(function(tours){
 		res.json(tours);
@@ -37,8 +41,13 @@ module.exports.getOne = function(req,res){
 		}]
 	})
 		.then(function(tours){
+			models.Booking.count({ where: ["tour_id = ?", tours.id] })
+			.then(function(numBookings) {
+    			tours.num_avail = (tours.num_avail - numBookings);
+    			console.log(tours.num_avail);
+    			//console.log(tours);
+    			res.json(tours);
 
-
-			res.json(tours);
+ 			})
 		});
 };

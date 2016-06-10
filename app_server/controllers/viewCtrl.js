@@ -14,7 +14,7 @@ module.exports.getOne = function(req,res){
 	var id = req.params.id;
     request.get('http://localhost:3000/api/tours/' + id, function(error,response,body){
         if (!error) {
-//         console.log(JSON.parse(body));
+         console.log(JSON.parse(body));
             res.render("singleTour", {Tour : JSON.parse(body)});
         } else {
             res.sendStatus(500);
