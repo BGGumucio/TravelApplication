@@ -22,7 +22,7 @@ module.exports.getOne = function(req,res){
     });
 };
 
-
+//Testing git upload
 
 module.exports.myBookings = function(req,res){
 		console.log("before post request");
@@ -45,7 +45,7 @@ module.exports.myBookings = function(req,res){
 
         }
         else{
-        	console.log(error);
+        	console.log("Error" + error);
         	res.sendStatus(500);
         }
     });
